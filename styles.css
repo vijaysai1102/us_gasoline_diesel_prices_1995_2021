@@ -1,0 +1,165 @@
+/* --- 1. Global Styles and Reset --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Clear default margins from HTML elements */
+h1, h2, h3, p, header, footer, main {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- 2. Header and Footer --- */
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Ensure main content has enough padding to not be hidden by the footer */
+main {
+    padding-bottom: 50px; /* Space equal to or slightly more than footer height */
+}
+
+/* --- 3. Home Page Layout (index.html) --- */
+
+.card-container {
+    display: grid;
+    /* Use CSS Grid for a responsive layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.card {
+    display: block; /* Makes the whole card clickable */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    text-decoration: none; /* Remove underline from the anchor tag */
+    color: inherit; /* Inherit text color from body */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: #3498db; /* A blue color for the heading */
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* --- 4. Chart Page Layout (page1-3.html) --- */
+
+.page-content {
+    /* INCREASED max-width to allow the content (and image) to expand */
+    /* I've set it to 1600px to accommodate a 1400px image size comfortably. */
+    max-width: 1600px; 
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-content h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.page-content img {
+    max-width: 100%; /* Keeps the image responsive within its parent */
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.page-content p {
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+.image-row {
+    display: flex;       
+    justify-content: space-around; 
+    align-items: flex-start; 
+    margin-bottom: 20px; /* Space below the image pair */
+}
+
+.image-row img {
+    width: 48%; 
+    max-width: 100%; 
+    height: auto;
+    
+    /* Override the 'display: block' and 'margin: 20px auto' from .page-content img */
+    margin: 0;
+    display: initial; 
+}
+
+
+/* --- 5. Back Button --- */
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+}
+
+.back-btn:hover {
+    background-color: #2980b9;
+}
+
+/* --- Responsive Adjustments for Smaller Screens --- */
+@media (max-width: 600px) {
+    .card-container {
+        padding: 20px;
+    }
+    .page-content {
+        margin: 20px;
+        padding: 15px;
+    }
+    header {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+}

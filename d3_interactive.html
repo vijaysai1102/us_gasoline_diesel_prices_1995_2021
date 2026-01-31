@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive D3.js Visualizations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style>
+        .viz-container {
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 1100px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        #legend button, #legend2 button, #legend3 button {
+            padding: 6px 10px;
+            margin-right: 6px;
+            border-radius: 6px;
+            border: none;
+            background: #eee;
+            cursor: pointer;
+        }
+
+        #legend button.active,
+        #legend2 button.active,
+        #legend3 button.active {
+            background: #fff;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        }
+
+        .tooltip {
+            position: absolute;
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.75);
+            color: white;
+            padding: 6px 8px;
+            border-radius: 4px;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-content">
+        <h1>Interactive D3.js Visualizations</h1>
+
+        <!-- GRAPH 1: STACKED AREA -->
+        <div class="viz-container">
+            <h2>Interactive Stacked Area Chart of U.S. Gasoline Price Averages</h2>
+            <div id="legend"></div>
+            <svg id="chart" width="1000" height="450"></svg>
+            <div class="tooltip" id="tooltip"></div>
+        </div>
+
+        <!-- GRAPH 2: PARALLEL COORDINATES -->
+        <div class="viz-container">
+            <h2>Interactive Parallel Coordinates Plot of Multi-Grade U.S. Gasoline Prices</h2>
+            <div id="legend2"></div>
+            <svg id="pc" width="1100" height="420"></svg>
+            <div class="tooltip" id="tooltip2"></div>
+        </div>
+
+        <!-- GRAPH 3: MULTI-LINE -->
+        <div class="viz-container">
+            <h2>Interactive Multi-Line Trend Analysis of U.S. Gasoline Prices (A1, R1, M1, D1) - 1995 to 2021</h2>
+            <div id="legend3"></div>
+            <svg id="chart3" width="1000" height="450"></svg>
+            <div class="tooltip" id="tooltip3"></div>
+        </div>
+
+        <!-- BACK BUTTON AT THE BOTTOM -->
+<a href="page3.html" class="back-btn">Back to D3.js visualizations page</a>
+
+
+    </div>
+
+    <!-- JS FILES -->
+    <script src="interactive1.js"></script>
+    <script src="interactive2.js"></script>
+    <script src="interactive3.js"></script>
+
+</body>
+</html>
